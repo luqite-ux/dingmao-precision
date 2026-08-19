@@ -3,6 +3,7 @@ import { Manrope, Space_Grotesk } from 'next/font/google'
 
 import { Footer } from '@/components/layout/Footer'
 import { Header } from '@/components/layout/Header'
+import { JsonLd } from '@/components/JsonLd'
 import { company } from '@/lib/site'
 
 import './globals.css'
@@ -19,5 +20,5 @@ export const metadata: Metadata = {
 export const viewport: Viewport = { width: 'device-width', initialScale: 1, themeColor: '#f5f8f8' }
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en"><body className={`${bodyFont.variable} ${displayFont.variable}`}><Header /><main>{children}</main><Footer /></body></html>
+  return <html lang="en"><body className={`${bodyFont.variable} ${displayFont.variable}`}><JsonLd /><Header /><main>{children}</main><Footer /></body></html>
 }
