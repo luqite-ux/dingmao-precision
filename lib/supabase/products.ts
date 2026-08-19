@@ -19,15 +19,14 @@ function normalizeDatabaseProduct(row: Record<string, unknown>, locale: string):
     locale,
     'en',
   ) || String(row.description ?? '')
-  const images = Array.isArray(row.images) ? row.images : []
   return {
     id: String(row.id),
     slug,
     name,
     description,
-    categoryId: String(row.category_id ?? ''),
-    categoryName: String(row.category_name ?? 'Custom Precision Components'),
-    image: String(row.main_image ?? images[0] ?? '/brand/logo.png'),
+    categoryId: String((row.extra_data as Record<string, unknown> | null)?.source_category_id ?? row.category_slug ?? ''),
+    categoryName: String(row.category ?? 'Custom Precision Components'),
+    image: String(row.image_url ?? '/brand/logo.png'),
     sourceUrl: String((row.extra_data as Record<string, unknown> | null)?.source_url ?? ''),
     inquiryHref: `/contact?product=${encodeURIComponent(String(row.id))}`,
   }

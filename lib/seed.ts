@@ -2,14 +2,17 @@ import { company } from './site.ts'
 
 export function buildTenantPayload(baseUrl: string) {
   const base = baseUrl.replace(/\/$/, '')
+  const r2Base = (process.env.R2_PUBLIC_URL_PREFIX || process.env.NEXT_PUBLIC_R2_PUBLIC_URL_PREFIX || '').replace(/\/$/, '')
+  const logoUrl = r2Base ? `${r2Base}/tenants/dingmao-precision/branding/logo.png` : `${base}/brand/logo.png`
   return {
     display_name: '嘉兴鼎茂精密科技有限公司',
     name: company.name,
+    email: company.email,
     domain: base.replace(/^https?:\/\//, ''),
     admin_group: 2,
     brand_color: '#b9c400',
-    logo_url: `${base}/brand/logo.png`,
-    favicon_url: `${base}/brand/logo.png`,
+    logo_url: logoUrl,
+    favicon_url: logoUrl,
     default_language: 'en',
     supported_languages: ['en'],
     site_title_i18n: { en: 'Dingmao Precision | Custom CNC Components' },
