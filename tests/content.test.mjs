@@ -16,7 +16,7 @@ test('fallback catalog exposes every audited product as English inquiry content'
     assert.match(product.slug, /^[a-z0-9]+(?:-[a-z0-9]+)*$/)
     assert.match(product.name, /[A-Za-z]/)
     assert.ok(product.description.length >= 60)
-    assert.match(product.image, /^\/products\/\d+\.jpg$/)
+    assert.match(product.image, /^\/products-ai\/\d+\.jpg$/)
     assert.match(product.inquiryHref, /^\/contact\?product=/)
     assert.equal(product.price, undefined)
   }

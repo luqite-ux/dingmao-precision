@@ -35,7 +35,7 @@ const files = [
   { source: path.join(root, 'public/brand/logo.png'), key: 'tenants/dingmao-precision/branding/logo.png' },
   ...fs.readdirSync(path.join(root, 'public/products')).filter((name) => /\.(png|jpe?g|webp)$/i.test(name)).sort().map((name) => ({
     source: path.join(root, 'public/products', name),
-    key: `tenants/dingmao-precision/products/${name}`,
+    key: `tenants/dingmao-precision/products-ai/${name}`,
   })),
 ]
 

@@ -97,7 +97,7 @@ function normalizeProduct(product: SourceProduct): CatalogProduct {
     description: `${name} manufactured to customer drawings for ${categoryName.toLowerCase()}. Dimensions, material, finish, tolerances, and production quantities are confirmed through the RFQ review.`,
     categoryId: product.sourceCategoryId,
     categoryName,
-    image: product.localImage,
+    image: product.localImage.replace('/products/', '/products-ai/'),
     sourceUrl: product.sourceUrl,
     inquiryHref: `/contact?product=${encodeURIComponent(product.offerId)}`,
   }

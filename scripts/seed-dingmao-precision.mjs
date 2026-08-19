@@ -12,7 +12,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
 if (!url || !serviceKey || !tenantId || !siteUrl) throw new Error('Supabase, tenant, and site URL environment variables are required.')
 const r2Base = (process.env.R2_PUBLIC_URL_PREFIX || process.env.NEXT_PUBLIC_R2_PUBLIC_URL_PREFIX || '').replace(/\/$/, '')
 const imageUrl = (image) => r2Base
-  ? `${r2Base}/tenants/dingmao-precision/products/${image.split('/').pop()}`
+  ? `${r2Base}/tenants/dingmao-precision/products-ai/${image.split('/').pop()}`
   : `${siteUrl.replace(/\/$/, '')}${image}`
 
 const db = createClient(url, serviceKey, { auth: { persistSession: false } })

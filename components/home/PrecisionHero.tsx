@@ -1,11 +1,12 @@
 'use client'
 
-import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, Crosshair, MoveUpRight } from 'lucide-react'
 import { useRef } from 'react'
 
-const heroProducts = ['827090966795', '912243390296', '913159100220']
+import { CleanProductImage } from '@/components/products/CleanProductImage'
+
+const heroProducts = ['827090966795', '912243390296', '771930555427']
 
 export function PrecisionHero() {
   const stage = useRef<HTMLDivElement>(null)
@@ -41,7 +42,7 @@ export function PrecisionHero() {
       <div className="stage-ring ring-one" />
       <div className="stage-ring ring-two" />
       {heroProducts.map((id, index) => <div className={`hero-product product-${index + 1}`} key={id}>
-        <Image src={`/products/${id}.jpg`} alt="Custom precision machined component" fill sizes="(max-width: 900px) 45vw, 24vw" priority={index === 0} />
+        <CleanProductImage src={`/products-ai/${id}.jpg`} alt="Custom precision machined component" sizes="(max-width: 900px) 45vw, 24vw" priority={index === 0} />
       </div>)}
       <div className="scan-line" />
       <div className="stage-label"><span>LIVE PART MATRIX</span><b>DM · 038</b></div>

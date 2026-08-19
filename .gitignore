@@ -8,3 +8,4 @@ test-results/
 output/
 *.tsbuildinfo
 .tenant-id.local
+.tmp/
