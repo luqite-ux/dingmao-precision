@@ -1,7 +1,7 @@
 export const company = {
   name: 'Dingmao Precision',
   legalName: 'Jiaxing Dingmao Precision Technology Co., Ltd.',
-  email: 'dingmao_precise@126.com',
+  email: 'info@dingmaoprecision.com',
   phones: ['+86 181 5736 1399', '+86 199 5733 9580'],
   address: 'Room 102, Building 1, No. 1228 Jiachuang Road, Xiuzhou District, Jiaxing, Zhejiang, China',
 }

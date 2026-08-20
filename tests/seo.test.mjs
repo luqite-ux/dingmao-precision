@@ -21,7 +21,7 @@ test('tenant seed preserves multilingual expansion and group assignment', () => 
   assert.equal(payload.display_name, '嘉兴鼎茂精密科技有限公司')
   assert.match(payload.site_title_i18n.en, /Dingmao Precision/)
   assert.match(payload.seo_description_i18n.en, /Jiaxing/)
-  assert.equal(payload.contact_email, 'dingmao_precise@126.com')
+  assert.equal(payload.contact_email, 'info@dingmaoprecision.com')
   assert.equal(payload.logo_url, 'https://example.com/brand/logo.png')
   assert.equal(payload.favicon_url, 'https://example.com/brand/logo.png')
 })
