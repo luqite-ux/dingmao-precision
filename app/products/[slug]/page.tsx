@@ -9,7 +9,7 @@ import { getProduct, getProducts } from '@/lib/supabase/products'
 type Props = { params: Promise<{ slug: string }> }
 
 export async function generateStaticParams() { return (await getProducts('en')).map(({ slug }) => ({ slug })) }
-export async function generateMetadata({ params }: Props): Promise<Metadata> { const { slug } = await params; const product = await getProduct(slug, 'en'); return product ? { title: product.name, description: product.description } : { title: 'Component Not Found' } }
+export async function generateMetadata({ params }: Props): Promise<Metadata> { const { slug } = await params; const product = await getProduct(slug, 'en'); return product ? { title: product.name, description: product.description, alternates: { canonical: `/products/${slug}` } } : { title: 'Component Not Found' } }
 
 export default async function ProductDetail({ params }: Props) {
   const { slug } = await params

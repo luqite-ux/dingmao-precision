@@ -1,4 +1,6 @@
 import { PageHero } from '@/components/PageHero'
 import { CleanProductImage } from '@/components/products/CleanProductImage'
 
+export const metadata = { alternates: { canonical: '/about' } }
+
 export default function AboutPage(){return <><PageHero eyebrow="JIAxing · CHINA" title="A focused precision manufacturing partner." intro="Jiaxing Dingmao Precision Technology Co., Ltd. supports drawing-based component production from Jiaxing, Zhejiang, China." action={{label:'Contact our team',href:'/contact'}}/><section className="about-layout section"><div><span className="eyebrow">PRODUCTION FOUNDATION</span><h2>Machines are capacity. Process clarity turns them into outcomes.</h2><p>Our equipment list includes Tsugami 385C, Tsugami 325, Tsugami S205A, Tsugami BO205, Citizen 20G, and Star 20-class machines, with approximately 200 machines in total.</p><p>The current product matrix spans precision machining, hardware parts, fasteners, pneumatic parts, lighting components, bearing-related parts, filtration, mold standards, valves, and material-handling components.</p></div><div className="about-image"><CleanProductImage src="/products-ai/851736252645.jpg" alt="Precision component manufactured by Dingmao" sizes="(max-width:800px) 100vw, 45vw" /></div></section></>}

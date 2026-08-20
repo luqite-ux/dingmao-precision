@@ -6,7 +6,7 @@ import { PageHero } from '@/components/PageHero'
 import { CleanProductImage } from '@/components/products/CleanProductImage'
 import { getProducts } from '@/lib/supabase/products'
 
-export const metadata: Metadata = { title: 'Precision Components', description: 'Browse drawing-based CNC, hardware, fastener, pneumatic, sensor, and industrial components.' }
+export const metadata: Metadata = { title: 'Precision Components', description: 'Browse drawing-based CNC, hardware, fastener, pneumatic, sensor, and industrial components.', alternates: { canonical: '/products' } }
 
 export default async function ProductsPage({ searchParams }: { searchParams: Promise<{ category?: string }> }) {
   const { category } = await searchParams

@@ -5,7 +5,7 @@ import { InquiryForm } from '@/components/inquiry/InquiryForm'
 import { company } from '@/lib/site'
 import { getProducts } from '@/lib/supabase/products'
 
-export const metadata: Metadata = { title: 'Contact & RFQ', description: 'Send a drawing-based RFQ to Dingmao Precision in Jiaxing, China.' }
+export const metadata: Metadata = { title: 'Contact & RFQ', description: 'Send a drawing-based RFQ to Dingmao Precision in Jiaxing, China.', alternates: { canonical: '/contact' } }
 
 export default async function ContactPage({ searchParams }: { searchParams: Promise<{ product?: string }> }) {
   const { product: productId } = await searchParams

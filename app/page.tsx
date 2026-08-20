@@ -7,6 +7,8 @@ import { faqs } from '@/lib/site'
 import { getPublishedArticles } from '@/lib/supabase/articles'
 import { getProducts } from '@/lib/supabase/products'
 
+export const metadata = { alternates: { canonical: '/' } }
+
 export default async function HomePage() {
   const [products, articles] = await Promise.all([getProducts('en'), getPublishedArticles('en')])
   const featured = products.slice(0, 6)

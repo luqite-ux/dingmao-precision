@@ -11,6 +11,7 @@ const bodyFont = Manrope({ subsets: ['latin'], variable: '--font-body' })
 const displayFont = Space_Grotesk({ subsets: ['latin'], variable: '--font-display' })
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://dingmaoprecision.com'),
   title: { default: 'Dingmao Precision | Custom CNC Components', template: '%s | Dingmao Precision' },
   description: 'Drawing-based Swiss turning, CNC turning, and precision component manufacturing in Jiaxing, China.',
   icons: { icon: '/brand/logo.png', apple: '/brand/logo.png' },
