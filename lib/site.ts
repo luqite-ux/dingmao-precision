@@ -21,6 +21,12 @@ export const requiredRoutes = ['/', '/products', '/capabilities', '/industries',
 
 export const homeSections = ['hero', 'proof', 'categories', 'products', 'capabilities', 'industries', 'equipment', 'process', 'faq', 'news', 'inquiry'] as const
 
+export function getIconGridLayout(itemCount: number) {
+  if (itemCount === 5) return 'icon-page-grid--industries'
+  if (itemCount === 6) return 'icon-page-grid--capabilities'
+  return ''
+}
+
 export const faqs = [
   ['What part sizes can you manufacture?', 'Our current machining range covers outside diameters from 0.5 mm to 38 mm. Final feasibility is confirmed against the drawing and tolerance requirements.'],
   ['Can you work with custom drawings?', 'Yes. We support custom dimensions, materials, finishes, and processes for drawing-based OEM and ODM projects.'],
