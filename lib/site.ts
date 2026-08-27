@@ -27,6 +27,32 @@ export function getIconGridLayout(itemCount: number) {
   return ''
 }
 
+export const visualPages = {
+  industries: {
+    heroImages: [
+      { src: '/products-ai/911919047728.jpg', alt: 'Automotive precision component manufactured by Dingmao', label: 'Automotive interface' },
+      { src: '/products-ai/851736252645.jpg', alt: 'Communication connector manufactured by Dingmao', label: '5G connector' },
+      { src: '/products-ai/827354457551.jpg', alt: 'Medical connector manufactured by Dingmao', label: 'Medical connector' },
+    ],
+    metrics: [['5 application groups', 'Current representative scope'], ['Drawing-based', 'Application review'], ['Order-specific', 'Inspection requirements']],
+    items: [
+      { title: 'Automotive components', eyebrow: 'AUTOMOTIVE', text: 'Interfaces, fittings, sleeves, shafts, and custom mechanical parts reviewed around the mating assembly.', image: '/products-ai/911919047728.jpg' },
+      { title: 'Communication equipment', eyebrow: 'COMMUNICATIONS', text: 'Compact structural and conductive components, including connector and optical-interface geometries.', image: '/products-ai/851736252645.jpg' },
+      { title: 'Air-tool & pneumatic', eyebrow: 'PNEUMATIC', text: 'Nozzles, threaded bodies, connectors, and valve-related components for controlled air paths.', image: '/products-ai/827323925194.jpg' },
+      { title: 'Sensor assemblies', eyebrow: 'SENSORS', text: 'Small turned housings, pins, and precision interfaces for measurement and connected assemblies.', image: '/products-ai/771952089765.jpg' },
+      { title: 'Medical equipment', eyebrow: 'MEDICAL', text: 'Drawing-based precision components with material and inspection requirements confirmed per order.', image: '/products-ai/827354457551.jpg' },
+    ],
+  },
+  capabilities: {
+    heroImages: [
+      { src: '/products-ai/771945202977.jpg', alt: 'Stainless steel precision connector manufactured by Dingmao', label: 'Turned stainless part' },
+      { src: '/products-ai/851736252645.jpg', alt: 'Precision communication connector manufactured by Dingmao', label: 'Multi-feature connector' },
+      { src: '/products-ai/771930555427.jpg', alt: 'Precision machined component manufactured by Dingmao', label: 'Machined detail' },
+    ],
+    metrics: [['0.5–38 mm', 'Outside diameter range'], ['~200', 'Machines listed'], ['3–15 days', 'Sampling reference']],
+  },
+} as const
+
 export const faqs = [
   ['What part sizes can you manufacture?', 'Our current machining range covers outside diameters from 0.5 mm to 38 mm. Final feasibility is confirmed against the drawing and tolerance requirements.'],
   ['Can you work with custom drawings?', 'Yes. We support custom dimensions, materials, finishes, and processes for drawing-based OEM and ODM projects.'],

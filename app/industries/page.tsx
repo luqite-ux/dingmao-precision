@@ -1,7 +1,45 @@
-import { CircuitBoard, Cog, Gauge, Stethoscope, Wind } from 'lucide-react'
-import { PageHero } from '@/components/PageHero'
-import { getIconGridLayout } from '@/lib/site'
+import Link from 'next/link'
+import { ArrowRight } from 'lucide-react'
+
+import { CleanProductImage } from '@/components/products/CleanProductImage'
+import { VisualPageHero } from '@/components/VisualPageHero'
+import { visualPages } from '@/lib/site'
 
 export const metadata = { alternates: { canonical: '/industries' } }
 
-export default function IndustriesPage(){const items=[[Cog,'Automotive components','Interfaces, fittings, sleeves, shafts, and custom mechanical parts.'],[CircuitBoard,'Communication equipment','Compact structural and conductive components for connected assemblies.'],[Wind,'Air-tool & pneumatic','Nozzles, connectors, threaded bodies, and valve-related parts.'],[Gauge,'Sensor assemblies','Precision housings, interfaces, and small turned elements.'],[Stethoscope,'Medical equipment','Drawing-based precision parts with order-specific inspection requirements.']];return <><PageHero eyebrow="INDUSTRIES" title="Precision parts live inside bigger systems." intro="Our role is to understand the assembly around the component, not only the isolated geometry." action={{label:'Tell us your application',href:'/contact'}}/><section className={`icon-page-grid ${getIconGridLayout(items.length)} section`}>{items.map(([Icon,title,text])=><article key={String(title)}><Icon size={27}/><h2>{String(title)}</h2><p>{String(text)}</p></article>)}</section></>}
+export default function IndustriesPage() {
+  const page = visualPages.industries
+
+  return <>
+    <VisualPageHero
+      eyebrow="INDUSTRIES"
+      title="Precision parts live inside bigger systems."
+      intro="We review the assembly around each component so interfaces, materials, geometry, and inspection needs align with its application."
+      action={{ label: 'Tell us your application', href: '/contact' }}
+      images={page.heroImages}
+      metrics={page.metrics}
+      variant="industries"
+    />
+    <section className="visual-story section">
+      <div className="visual-story-heading">
+        <span className="eyebrow">WHERE PARTS PERFORM</span>
+        <h2>Application context shapes the component.</h2>
+        <p>These are representative parts from Dingmao’s current product scope. Final feasibility and inspection requirements are confirmed against the buyer’s drawing and assembly needs.</p>
+      </div>
+      <div className="visual-story-grid">
+        {page.items.map((item, index) => <article key={item.title}>
+          <div className="visual-story-image">
+            <CleanProductImage src={item.image} alt={`${item.title} representative component manufactured by Dingmao`} sizes={index < 2 ? '(max-width:800px) 100vw, 50vw' : '(max-width:800px) 100vw, 33vw'} />
+            <span>0{index + 1}</span>
+          </div>
+          <div className="visual-story-copy">
+            <small>{item.eyebrow}</small>
+            <h2>{item.title}</h2>
+            <p>{item.text}</p>
+          </div>
+        </article>)}
+      </div>
+      <Link className="visual-story-cta" href="/contact">Share your application and drawing <ArrowRight size={18} /></Link>
+    </section>
+  </>
+}
