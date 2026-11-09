@@ -5,6 +5,7 @@ export type ArticleSummary = {
   slug: string
   title: string
   excerpt: string
+  content: string
   publishedAt: string
 }
 
@@ -15,9 +16,9 @@ export async function getPublishedArticles(locale = 'en'): Promise<ArticleSummar
 
   const { data, error } = await client
     .from('articles')
-    .select('slug,title,title_i18n,excerpt,excerpt_i18n,published_at')
+    .select('slug,title,title_i18n,excerpt,excerpt_i18n,content,content_i18n,published_at')
     .eq('tenant_id', tenantId)
-    .eq('status', 'published')
+    .eq('is_published', true)
     .order('published_at', { ascending: false })
 
   if (error || !data) return []
@@ -25,6 +26,7 @@ export async function getPublishedArticles(locale = 'en'): Promise<ArticleSummar
     slug: row.slug,
     title: resolveLocalized(row.title_i18n, locale, 'en') || row.title,
     excerpt: resolveLocalized(row.excerpt_i18n, locale, 'en') || row.excerpt || '',
+    content: resolveLocalized(row.content_i18n, locale, 'en') || row.content || '',
     publishedAt: row.published_at,
   }))
 }
